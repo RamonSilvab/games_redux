@@ -1,15 +1,15 @@
 import { screen } from '@testing-library/react'
 import Header from '..'
-import { rederizaComProvider } from '../../../utils/tests'
+import { renderizaComProvider } from '../../../utils/tests'
 
 describe('Teste para o componente header', () => {
   test('Deve renderizar corretamente', () => {
-    rederizaComProvider(<Header />)
+    renderizaComProvider(<Header />)
     expect(screen.getByText('EBAC Games')).toBeInTheDocument()
   })
 
   test('Deve renderizar com 2 itens no carrinho', () => {
-    rederizaComProvider(<Header />, {
+    renderizaComProvider(<Header />, {
       preloadedState: {
         carrinho: {
           itens: [
